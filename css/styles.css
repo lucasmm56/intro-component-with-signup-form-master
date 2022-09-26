@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@100;500;700&family=Overpass:wght@100;400&family=Poppins:ital,wght@0,200;0,400;0,700;1,500&family=Red+Hat+Display:wght@500;900&display=swap');
+:root{
+    /* Primary */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    /* Accent */
+    --blue:hsl(248, 32%, 49%);
+    /* Neutral */
+    --dark-blue:hsl(249, 10%, 26%);
+    --grayish-blue:  hsl(246, 25%, 77%);
+}
+body{
+    margin: 0%;
+    background-image: url(../images/bg-intro-desktop.png);
+    background-color: var(--red);
+    color: white;
+    font-family: 'Poppins';
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+main{
+    margin: 6em auto;
+    align-items: center;
+}
+section{
+}
+
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+.texts{
+    width: 25em;
+    margin-top: 4.5em;
+}
+.texts h1{
+    font-weight:700;
+    font-size: 2.5em;
+    line-height: 1em;
+}
+.texts p{
+    font-size: 0.8em;
+    font-weight:400;
+    line-height: 1.8em;
+}
+.formulario{
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7em;
+}
+.form1{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    border-color: var(--dark-blue);
+    padding: 1.5em 1.5em;
+    background-color: white;
+    margin-top: 1em;
+}
+.inputs{
+    height: 3em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    font-weight: 500;
+    font-family: 'Poppins';
+    border:1px solid var(--grayish-blue);
+    border-radius: 0.2em;
+}
+
+.inputs:focus {
+    outline: none !important;
+    border:1px solid  var(--blue);
+}
+.button-top{
+    height: 2.8em;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 0.5em;
+    border: none;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 11px;
+    padding-top: 1em;
+}
+.button-bold{
+    font-weight: 700;
+}
+.button-bottom{
+    height: 3em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.small-text{
+    color: black;
+    font-size: 7px;
+    font-weight: 500;
+    margin-top: 2em;
+    text-align: center;
+}
+.terms{
+    color:red;
+    text-decoration: none;
+}
+footer{
+    text-align: center;
+    padding-top: 10em;
+}
+
+#nameError {
+    display: none;
+    font-size: 0.8em;
+    color: #000;
+}
+
+#nameError.visible {
+    display: block;
+    width: 30px;
+  }
+  
+  .inputs.invalid {
+    border:1px solid red;
+  }
