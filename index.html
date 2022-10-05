@@ -28,15 +28,37 @@
             <span class="button-bold">
               Try it free 7 days
             </span>then $20/mo. thereafter</a>
-          <form action="#" class="form1" id="form">
-            <input class="inputs" type="text" placeholder="FirstName" name="firstname" id="firstname">
-            <span role="alert" id="nameError" aria-hidden="true">
-              Please enter First Name
-            </span>
-            <input class="inputs" type="text" placeholder="Last Name" name="lastname" id="lastname">
-            <input class="inputs" type="email" placeholder="Email Address" name="email" id="email">
-            <input class="inputs" type="password" placeholder="Password" name="password" id="password">
-            <input id="submit" class="button-bottom" type="submit" value="Claim your free trial">
+          <form action="#" class="form1" id="form" method="post" name="new_account">
+            <div class="input firstname__error__border">
+              <input type="text" name="firstname" placeholder="First Name" minlength="5" required/>
+              <div class="icon_error" id="firstname_icon_error">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>  
+              </div>
+          </div>
+          <span role="alert" id="firstname__error" class="message__error">First Name cannot be empty</span>
+          <div class="input lastname__error__border">
+              <input type="text" name="lastname" placeholder="Last Name" minlength="5" required />
+              <div class="icon_error" id="lastname_icon_error">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>  
+              </div>
+            </div>
+          <span role="alert" id="lastname__error" class="message__error">Last Name cannot be empty</span>
+          <div class="input email__error__border">
+            <input type="email" name="email" id="email_info" placeholder="Email Address" minlength="5" required />
+            <div class="icon_error" id="email_icon_error">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>  
+            </div>
+          </div>
+        <span role="alert" id="email__error" class="message__error">Looks like this is not an email</span>
+          <div class="input password__error__border">
+              <input type="password" name="password" placeholder="Password" minlength="6" required />
+              <div class="icon_error" id="password_icon_error">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>  
+              </div>          
+            </div>
+          <span role="alert" id="password__error" class="message__error">Password cannot be empty</span>
+
+          <button type="submit" class="button-bottom"  value="" onclick="validateFields()">Claim your free trial</button>
             <p class="small-text">
               By clicking the button, you are agreeing to our
               <a href="#" class="terms">
