@@ -17,20 +17,22 @@ body{
     color: white;
     font-family: 'Poppins';
     font-size: 16px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
 }
 main{
-    margin: 6em auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin: 0 50px;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.rows{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 .texts{
     width: 25em;
 }
@@ -137,9 +139,39 @@ input:focus {
 }
 footer{
     text-align: center;
-    padding-top: 10em;
 }
 
 .message__error{
     display: none;
+}
+
+@media screen and (max-width: 1180px) {
+    .formulario{
+        padding-left: 1em;
+    }
+
+    @media screen and (max-width:1060px) {
+        main{
+            margin: 0 auto;
+        }
+    }
+    
+    @media screen and (max-width:920px) {
+        main{
+            margin: 0 auto;
+        }
+
+    }
+
+    @media screen and (max-width:500px) {
+       section{
+        width: 90%;
+       }
+       .texts{
+        text-align: center;
+       }
+       footer{
+        margin-top: 50px;
+       }
+    }
 }
