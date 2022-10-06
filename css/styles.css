@@ -3,6 +3,7 @@
     /* Primary */
     --red: hsl(0, 100%, 74%);
     --green: hsl(154, 59%, 51%);
+    --button_hover: hsl(154, 97%, 76%);
     /* Accent */
     --blue:hsl(248, 32%, 49%);
     /* Neutral */
@@ -118,6 +119,10 @@ input:focus {
     cursor: pointer;
     box-shadow: 0px 10px 13px -7px #000000, 0px 5px 14px 0px rgba(0,0,0,0);
 }
+
+.button-bottom:hover{
+    background-color: var(--button_hover);
+}
 .small-text{
     color: var(--grayish-blue);
     font-size: 10px;
@@ -126,7 +131,7 @@ input:focus {
     text-align: center;
 }
 .terms{
-    color:red;
+    color: var(--red);
     text-decoration: none;
     font-weight: 700;
 }
