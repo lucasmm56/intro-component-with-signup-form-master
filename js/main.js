@@ -1,31 +1,59 @@
-const form = document.getElementById('form');
-const username = document.getElementById('firstName');
-const lastname = document.getElementById('lastName');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+function validateFields() {
+    const firstname = new_account.firstname;
+    const lastname = new_account.lastname;
+    const email = new_account.email;
+    const password = new_account.password;
 
-form.addEventListener('submit', (e) =>{
-    e.preventDefault()
+    checkRequiredFields(firstname, 'firstname__error', 'firstname_icon_error');
+    checkRequiredFields(lastname, 'lastname__error', 'lastname_icon_error');
+    checkRequiredFields(email, 'email__error', 'email_icon_error');
+    checkRequiredFields(password, 'password__error', 'password_icon_error');
+}
 
-    checkInputs()
-}) 
+function checkRequiredFields(field, span_error, icon_error) {
+    if (!field.value) {
+        const name_error = document.getElementById(`${span_error}`);
+        const icons_error = document.getElementById(`${icon_error}`);
+        document.getElementsByName('email')[0].placeholder='email@example/com';
+        name_error.classList.add('visible');
+        icons_error.classList.add('visible');
+        style(`${span_error}`, `${icon_error}`);
+    }
+}
 
-function checkInputs(){
-  const usernameValue = username.value.trim()
-  const lastNameValue = lastname.value.trim()
-  const emailValue = email.value.trim()
-  const passwordValue = password.value.trim()
+function style(span_error, icon_error) {
+    let css = `
+        #${span_error}.visible {
+            display: block;
+            color:var(--red);
+            font-size: 10px;
+            font-style: italic;
+            text-align: right;
+            margin-bottom: 1em;
+            outline: none !important;
 
-  if(usernamaValue === ''){
+        }
+          
+        .${span_error}__border {
+            border: 2px solid var(--red);
+            margin-top: 1em;
+        }
+        input::placeholder{
+            color:transparent;
+        }
 
-    errorValidation(username, 'Preencha esse campo')
-  }else{
+        #email_info::placeholder{
+            color:var(--red);
+        }
 
-  }
+        #${icon_error}.visible{
+            display:block;
+            padding-top: 0.8em;
+            padding-right: 1em;
+        }
+    `;
 
-  function errorValidation(input, message){
-    const formControl = input.parentElement;
-
-    formControl.className = 'form-control error'
-  }
+    let style = document.createElement('style');
+    style.innerHTML = css;
+    document.head.appendChild(style);
 }
