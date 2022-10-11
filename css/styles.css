@@ -115,17 +115,18 @@ footer{
     padding-top: 10em;
 }
 
-#nameError {
-    display: none;
-    font-size: 0.8em;
-    color: #000;
+.input-error{
+    height: 3em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    font-weight: 500;
+    font-family: 'Poppins';
+    border:1px solid red;
+    border-radius: 0.2em;
+    text-align: right;
 }
 
-#nameError.visible {
-    display: block;
-    width: 30px;
-  }
-  
-  .inputs.invalid {
-    border:1px solid red;
-  }
+.input-error img{
+    margin-top: 0.7em;
+    margin-right: 1.5em;
+}

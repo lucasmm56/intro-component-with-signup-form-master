@@ -30,13 +30,15 @@
             </span>then $20/mo. thereafter</a>
           <form action="#" class="form1" id="form">
             <input class="inputs" type="text" placeholder="FirstName" name="firstname" id="firstname">
-            <span role="alert" id="nameError" aria-hidden="true">
-              Please enter First Name
-            </span>
+            <div class="input-error">
+              <input type="text" >
+              <img src="./images/icon-error.svg" alt="">
+            </div> 
+            <span class="message">Error Message</span>
             <input class="inputs" type="text" placeholder="Last Name" name="lastname" id="lastname">
             <input class="inputs" type="email" placeholder="Email Address" name="email" id="email">
             <input class="inputs" type="password" placeholder="Password" name="password" id="password">
-            <input id="submit" class="button-bottom" type="submit" value="Claim your free trial">
+            <input id="submit" class="button-bottom" type="submit" value="Claim your free trial" click="validate()">
             <p class="small-text">
               By clicking the button, you are agreeing to our
               <a href="#" class="terms">
@@ -48,7 +50,7 @@
       </div>
       <footer>
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="https:github.com/lucasmm56">Lucas Martins</a>.
+        Coded by <a href="https://github.com/lucasmm56">Lucas Martins</a>.
       </footer>
     </section>
   </main>

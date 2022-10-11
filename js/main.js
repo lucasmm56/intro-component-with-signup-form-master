@@ -1,21 +1,31 @@
-const submit = document.getElementById("submit");
+const form = document.getElementById('form');
+const username = document.getElementById('firstName');
+const lastname = document.getElementById('lastName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
-submit.addEventListener('click', validate);
+form.addEventListener('submit', (e) =>{
+    e.preventDefault()
 
-function validate(e) {
-  e.preventDefault();
+    checkInputs()
+}) 
 
-  const firstNameField = document.getElementById("firstname");
-  let valid = true;
+function checkInputs(){
+  const usernameValue = username.value.trim()
+  const lastNameValue = lastname.value.trim()
+  const emailValue = email.value.trim()
+  const passwordValue = password.value.trim()
 
-  if (!firstNameField.value) {
-    const nameError = document.getElementById("nameError");
-    nameError.classList.add("visible");
-    firstNameField.classList.add("invalid");
-    nameError.setAttribute('aria-hidden', false);
-    nameError.setAttribute('aria-invalid', true);
+  if(usernamaValue === ''){
+
+    errorValidation(username, 'Preencha esse campo')
+  }else{
 
   }
 
-  return valid;
+  function errorValidation(input, message){
+    const formControl = input.parentElement;
+
+    formControl.className = 'form-control error'
+  }
 }
